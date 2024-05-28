@@ -1,0 +1,18 @@
+.navbar-custom {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.navbar-brand-custom {
+  padding: 20px;
+}
+
+.button-group {
+  position: absolute;
+  right: 20px; /* Adjust the right margin as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
