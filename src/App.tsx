@@ -1,10 +1,10 @@
-import PathfindingVisualizer from './components/PathfindingVisualizer/PathfindingVisualizer';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Maze from "./components/Maze/Maze";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <>
-      <PathfindingVisualizer />
+      <Maze />
     </>
   );
 }

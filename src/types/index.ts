@@ -1,52 +1,47 @@
-import Algorithm from '../algorithms/Algorithm';
+import Algorithm from "../algorithms/SearchAlgorithm";
 
 export type Algorithms = {
-    [key: string]: Algorithm;
+  [key: string]: Algorithm;
 };
 
 export type MyNavbarProps = {
-    currentAlgorithm: string;
-    buttonsDisabled: boolean;
-    onChangeMaze: (type: string) => void;
-    onChangeAlgorithm: (algorithmName: string) => void;
-    start: () => void;
-    clear: () => void;
-}
+  start: () => void;
+  clear: () => void;
+};
 
 export enum State {
-    Start = 'start',
-    Target = 'target',
-    Wall = 'wall',
-    Space = 'space'
+  Start = "start",
+  Target = "target",
+  Wall = "wall",
+  Space = "space",
 }
 
 export type Point = {
-    row: number;
-    col: number;
+  row: number;
+  col: number;
 };
-  
+
 export type NodeProps = {
-    point: Point;
-    state: State;
+  point: Point;
+  state: State;
 };
 
 export type NodeType = {
-    point: Point;
-    state: State;
-    distance: number;
-    isVisited: boolean;
-    previousNode: NodeType | null;
-    heuristic: number;
+  point: Point;
+  state: State;
+  distance: number;
+  isVisited: boolean;
+  previousNode: NodeType | null;
+  heuristic: number;
 };
 
-export type Orientation = 'horizontal' | 'vertical';
+export type Orientation = "horizontal" | "vertical";
 
 export type ShortestPath = {
-    visitedNodesInOrder: NodeType[];
-    nodesInShortestPathOrder: NodeType[];
+  visitedNodesInOrder: NodeType[];
+  shortestPath: NodeType[];
 };
 
-export type MazeType = 'simple' | 'random' | 'horizontal' |'vertical';
+export type MazeType = "Simple" | "Random" | "Horizontal" | "Vertical";
 
-export type AlgorithmsType = 'BFS' | 'DFS' | 'Astar' | 'Dijkstra';
-
+export type AlgorithmsType = "BFS" | "Astar" | "Dijkstra";

@@ -1,8 +1,12 @@
-import { NodeType, State } from '../types';
-import Algorithm from './Algorithm';
+import { NodeType, State } from "../types";
+import SearchAlgorithm from "./SearchAlgorithm";
 
-class AStar extends Algorithm {
-  public override findPath(maze: NodeType[][], startNode: NodeType, targetNode: NodeType): NodeType[] {
+class AStar extends SearchAlgorithm {
+  public override findPath(
+    maze: NodeType[][],
+    startNode: NodeType,
+    targetNode: NodeType
+  ): NodeType[] {
     const openSet = [startNode];
     const closedSet: NodeType[] = [];
     startNode.distance = 0;
@@ -28,10 +32,18 @@ class AStar extends Algorithm {
   }
 
   private sortNodesByHeuristic(openSet: NodeType[]): void {
-    openSet.sort((nodeA, nodeB) => (nodeA.distance + nodeA.heuristic) - (nodeB.distance + nodeB.heuristic));
+    openSet.sort(
+      (nodeA, nodeB) =>
+        nodeA.distance + nodeA.heuristic - (nodeB.distance + nodeB.heuristic)
+    );
   }
 
-  private updateNeighbors(node: NodeType, maze: NodeType[][], targetNode: NodeType, openSet: NodeType[]): void {
+  private updateNeighbors(
+    node: NodeType,
+    maze: NodeType[][],
+    targetNode: NodeType,
+    openSet: NodeType[]
+  ): void {
     const neighbors = this.getUnvisitedNeighbors(node, maze);
     for (const neighbor of neighbors) {
       const tentativeDistance = node.distance + 1;

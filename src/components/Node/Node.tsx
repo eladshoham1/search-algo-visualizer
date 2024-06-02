@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react';
-import { NodeProps } from '../../types';
-import './Node.css';
+import React, { useMemo } from "react";
+import { NodeProps } from "../../types";
+import "./Node.css";
 
 const Node: React.FC<NodeProps> = ({ point, state }) => {
   const extraClassName = useMemo(() => {
