@@ -1,8 +1,12 @@
-import { NodeType, State } from '../types';
-import Algorithm from './Algorithm';
+import { NodeType, State } from "../types";
+import SearchAlgorithm from "./SearchAlgorithm";
 
-class Dijkstra extends Algorithm {
-  public override findPath(maze: NodeType[][], startNode: NodeType, targetNode: NodeType): NodeType[] {
+class Dijkstra extends SearchAlgorithm {
+  public override findPath(
+    maze: NodeType[][],
+    startNode: NodeType,
+    targetNode: NodeType
+  ): NodeType[] {
     const visitedNodesInOrder: NodeType[] = [];
     startNode.distance = 0;
     const unvisitedNodes = this.getAllNodes(maze);

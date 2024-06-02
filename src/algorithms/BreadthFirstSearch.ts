@@ -1,8 +1,12 @@
-import { NodeType, State } from '../types';
-import Algorithm from './Algorithm';
+import { NodeType, State } from "../types";
+import SearchAlgorithm from "./SearchAlgorithm";
 
-class BreadthFirstSearch extends Algorithm {
-  public override findPath(maze: NodeType[][], startNode: NodeType, targetNode: NodeType): NodeType[] {
+class BreadthFirstSearch extends SearchAlgorithm {
+  public override findPath(
+    maze: NodeType[][],
+    startNode: NodeType,
+    targetNode: NodeType
+  ): NodeType[] {
     const queue: NodeType[] = [];
     const visitedNodesInOrder: NodeType[] = [];
 
